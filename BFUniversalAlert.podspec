@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.summary      = "A short description of BFUniversalAlert."
   s.homepage     = "https://github.com/adaixiyuan/BFUniversalAlert"
-  s.license      = "MIT (example)"
+   s.license     = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "quanyan" => "heng.luo@quncaotech.com" }
   s.source       = { :git => "https://github.com/adaixiyuan/BFUniversalAlert.git", :tag => "#{s.version}" }
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
