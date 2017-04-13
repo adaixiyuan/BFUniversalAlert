@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
  
   s.name         = "BFUniversalAlert"
   s.version      = "0.0.1"
+  s.platform     = :ios, "8.0"
   s.summary      = "A short description of BFUniversalAlert."
   s.homepage     = "https://github.com/adaixiyuan/BFUniversalAlert"
   s.license      = "MIT (example)"
@@ -20,7 +21,6 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
 
   s.requires_arc  = true
-  s.platform      = 'ios', ‘8.0’
  
   s.subspec 'Core' do |cs|
     cs.dependency  'RMUniversalAlert', '0.8.1'
