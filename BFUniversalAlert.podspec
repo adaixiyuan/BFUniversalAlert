@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
   s.requires_arc  = true
  
   s.subspec 'Core' do |cs|
-    cs.dependency  'RMUniversalAlert', '0.8.1'
-    cs.dependency  'LCActionSheet', '2.7.4'
+    cs.dependency  'RMUniversalAlert'
+    cs.dependency  'LCActionSheet'
   end
 
 end
