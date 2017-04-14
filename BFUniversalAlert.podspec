@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.summary      = "A short description of BFUniversalAlert."
   s.homepage     = "https://github.com/adaixiyuan/BFUniversalAlert"
-   s.license     = { :type => 'MIT', :file => 'LICENSE' }
+  s.license     = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "quanyan" => "heng.luo@quncaotech.com" }
   s.source       = { :git => "https://github.com/adaixiyuan/BFUniversalAlert.git", :tag => "#{s.version}" }
   s.exclude_files = "Classes/Exclude"
@@ -22,26 +22,26 @@ Pod::Spec.new do |s|
   s.requires_arc  = true
   s.default_subspec = 'UniversalAlert', 'LCActionSheet', 'RMUniversalAlert'
 
-# UniversalAlert
+  # UniversalAlert
   s.subspec 'UniversalAlert' do |un|
-    un.source_files  = "Classes/BFUniversalAlert/*.{h,m}"
+    un.source_files  = "Classes/BFUniversalAlert/**/*.{h,m}"
+    un.platform     = :ios, "8.0"
   end	
 
-# LCActionSheet
+  # LCActionSheet
   s.subspec 'LCActionSheet' do |lc|
-    lc.source_files  = "Classes/LCActionSheet/*.{h,m}"
+    lc.source_files  = "Classes/LCActionSheet/**/*.{h,m}"
+    lc.platform     = :ios, "8.0"
+    ls.dependency  'Masonry', '~> 1.0.2'
   end
 
-# RMUniversalAlert
+  # RMUniversalAlert
   s.subspec 'RMUniversalAlert' do |rm|
-    rm.source_files  = "RMUniversalAlert", "Classes/RMUniversalAlert/*.{h,m}"
-  end
-
-  s.subspec 'Core' do |cs|
-    cs.dependency  'Masonry', '~> 1.0.2'
-    cs.dependency  'UIAlertView+Blocks', '>= 0.9'
-    cs.dependency  'UIActionSheet+Blocks', '>= 0.9'
-    cs.dependency  'UIAlertController+Blocks', '>= 0.9'
+    rm.source_files  = "RMUniversalAlert", "Classes/RMUniversalAlert/**/*.{h,m}"
+    rm.platform     = :ios, "8.0"
+    rm.dependency  'UIAlertView+Blocks', '>= 0.9'
+    rm.dependency  'UIActionSheet+Blocks', '>= 0.9'
+    rm.dependency  'UIAlertController+Blocks', '>= 0.9'
   end
 
 end
