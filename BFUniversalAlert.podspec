@@ -17,14 +17,31 @@ Pod::Spec.new do |s|
    s.license     = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "quanyan" => "heng.luo@quncaotech.com" }
   s.source       = { :git => "https://github.com/adaixiyuan/BFUniversalAlert.git", :tag => "#{s.version}" }
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   s.requires_arc  = true
- 
+  s.default_subspec = 'UniversalAlert', 'LCActionSheet', 'RMUniversalAlert'
+
+# UniversalAlert
+  s.subspec 'UniversalAlert' do |un|
+    un.source_files  = "Classes/BFUniversalAlert/*.{h,m}"
+  end	
+
+# LCActionSheet
+  s.subspec 'LCActionSheet' do |lc|
+    lc.source_files  = "Classes/LCActionSheet/*.{h,m}"
+  end
+
+# RMUniversalAlert
+  s.subspec 'RMUniversalAlert' do |rm|
+    rm.source_files  = "RMUniversalAlert", "Classes/RMUniversalAlert/*.{h,m}"
+  end
+
   s.subspec 'Core' do |cs|
-    cs.dependency  'RMUniversalAlert','0.8.1'
-    cs.dependency  'LCActionSheet', '2.7.2'
+    cs.dependency  'Masonry', '~> 1.0.2'
+    cs.dependency  'UIAlertView+Blocks', '>= 0.9'
+    cs.dependency  'UIActionSheet+Blocks', '>= 0.9'
+    cs.dependency  'UIAlertController+Blocks', '>= 0.9'
   end
 
 end
