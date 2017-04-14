@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RMUniversalAlert.h"
-#import <LCActionSheet/LCActionSheet.h>
+#import "LCActionSheet.h"
 
 @interface BFUniversalAlert : NSObject
 
