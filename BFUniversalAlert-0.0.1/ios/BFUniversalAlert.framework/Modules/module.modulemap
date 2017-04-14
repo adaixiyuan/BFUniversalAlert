@@ -1,0 +1,6 @@
+framework module BFUniversalAlert {
+  umbrella header "BFUniversalAlert.h"
+
+  export *
+  module * { export * }
+}
