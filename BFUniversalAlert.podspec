@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.subspec 'LCActionSheet' do |lc|
     lc.source_files  = "Classes/LCActionSheet/**/*.{h,m}"
     lc.platform     = :ios, "8.0"
-    ls.dependency  'Masonry', '~> 1.0.2'
+    lc.dependency  'Masonry', '~> 1.0.2'
   end
 
   # RMUniversalAlert
