@@ -24,20 +24,20 @@ Pod::Spec.new do |s|
 
   # UniversalAlert
   s.subspec 'UniversalAlert' do |un|
-    un.source_files  = "Classes/BFUniversalAlert/**/*.{h,m}"
+    un.source_files  = "BFUniversalAlert/**/*.{h,m}"
     un.platform     = :ios, "8.0"
   end	
 
   # LCActionSheet
   s.subspec 'LCActionSheet' do |lc|
-    lc.source_files  = "Classes/LCActionSheet/**/*.{h,m}"
+    lc.source_files  = "LCActionSheet/**/*.{h,m}"
     lc.platform     = :ios, "8.0"
     lc.dependency  'Masonry', '~> 1.0.2'
   end
 
   # RMUniversalAlert
   s.subspec 'RMUniversalAlert' do |rm|
-    rm.source_files  = "RMUniversalAlert", "Classes/RMUniversalAlert/**/*.{h,m}"
+    rm.source_files  = "RMUniversalAlert", "RMUniversalAlert/**/*.{h,m}"
     rm.platform     = :ios, "8.0"
     rm.dependency  'UIAlertView+Blocks', '>= 0.9'
     rm.dependency  'UIActionSheet+Blocks', '>= 0.9'
