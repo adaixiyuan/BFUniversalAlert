@@ -20,25 +20,24 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
 
   s.requires_arc  = true
-  s.default_subspec = 'UniversalAlert', 'LCActionSheet', 'RMUniversalAlert'
-
+ 
   # UniversalAlert
   s.subspec 'UniversalAlert' do |un|
-    un.source_files  = "BFUniversalAlert/**/*.{h,m}"
-    un.platform     = :ios, "8.0"
+    un.source_files  = 'Clasess/BFUniversalAlert/**/*.{h,m}'
+    un.public_header_files = 'Clasess/BFUniversalAlert/**/*.h'
   end	
 
   # LCActionSheet
   s.subspec 'LCActionSheet' do |lc|
-    lc.source_files  = "LCActionSheet/**/*.{h,m}"
-    lc.platform     = :ios, "8.0"
+    lc.source_files  = 'Clasess/LCActionSheet/**/*.{h,m}'
+    lc.public_header_files = 'Clasess/LCActionSheet/**/*.h'
     lc.dependency  'Masonry', '~> 1.0.2'
   end
 
   # RMUniversalAlert
   s.subspec 'RMUniversalAlert' do |rm|
-    rm.source_files  = "RMUniversalAlert", "RMUniversalAlert/**/*.{h,m}"
-    rm.platform     = :ios, "8.0"
+    rm.source_files  = 'Clasess/RMUniversalAlert/**/*.{h,m}'
+    rm.public_header_files = 'Clasess/RMUniversalAlert/**/*.h'
     rm.dependency  'UIAlertView+Blocks', '>= 0.9'
     rm.dependency  'UIActionSheet+Blocks', '>= 0.9'
     rm.dependency  'UIAlertController+Blocks', '>= 0.9'
