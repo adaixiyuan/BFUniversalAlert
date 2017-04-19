@@ -33,7 +33,7 @@
                 cancelButtonTitle:(nullable NSString *)cancelButtonTitle
            destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle
                 otherButtonTitles:(nullable NSArray *)otherButtonTitles
-                         tapBlock:(nullable RMUniversalAlertCompletionBlock)tapBlock
+                         tapBlock:(nullable RBFUniversalAlertCompletionBlock)tapBlock
 {
     UIAlertController *strongController = [UIAlertController alertControllerWithTitle:title
                                                                  message:message

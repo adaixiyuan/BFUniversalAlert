@@ -10,6 +10,8 @@
 #import "RMUniversalAlert.h"
 #import "LCActionSheet.h"
 
+typedef void(^RBFUniversalAlertCompletionBlock)(UIAlertController * __nonnull alert, NSInteger buttonIndex);
+
 @interface BFUniversalAlert : NSObject
 
 /**
@@ -49,7 +51,7 @@
                 cancelButtonTitle:(nullable NSString *)cancelButtonTitle
            destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle
                 otherButtonTitles:(nullable NSArray *)otherButtonTitles
-                         tapBlock:(nullable RMUniversalAlertCompletionBlock)tapBlock;
+                         tapBlock:(nullable RBFUniversalAlertCompletionBlock)tapBlock;
 
 /**
  *  系统样式 actionSheet
