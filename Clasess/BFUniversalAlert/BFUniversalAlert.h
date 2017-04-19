@@ -30,6 +30,26 @@
            destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle
                 otherButtonTitles:(nullable NSArray *)otherButtonTitles
                          tapBlock:(nullable RMUniversalAlertCompletionBlock)tapBlock;
+/**
+ *  系统样式 alertView
+ *
+ *  @param viewController         显示控制器
+ *  @param title                  标题
+ *  @param message                描述
+ *  @param textFieldtext          输入框
+ *  @param cancelButtonTitle      取消
+ *  @param destructiveButtonTitle 红色文字
+ *  @param otherButtonTitles      其他
+ *  @param tapBlock               回调
+ */
++ (void)showAlertInViewController:(nonnull UIViewController *)viewController
+                        withTitle:(nullable NSString *)title
+                          message:(nullable NSString *)message
+                    textFieldtext:(nullable NSArray *)textTitles
+                cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+           destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle
+                otherButtonTitles:(nullable NSArray *)otherButtonTitles
+                         tapBlock:(nullable RMUniversalAlertCompletionBlock)tapBlock;
 
 /**
  *  系统样式 actionSheet
