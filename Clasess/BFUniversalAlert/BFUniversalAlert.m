@@ -26,7 +26,64 @@
                               otherButtonTitles:otherButtonTitles
                                        tapBlock:tapBlock];
 }
-
++ (void)showAlertInViewController:(nonnull UIViewController *)viewController
+                        withTitle:(nullable NSString *)title
+                          message:(nullable NSString *)message
+                    textFieldtext:(nullable NSArray *)textTitles
+                cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+           destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle
+                otherButtonTitles:(nullable NSArray *)otherButtonTitles
+                         tapBlock:(nullable RMUniversalAlertCompletionBlock)tapBlock
+{
+    UIAlertController *strongController = [UIAlertController alertControllerWithTitle:title
+                                                                 message:message
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    __weak UIAlertController *controller = strongController;
+    
+    if (cancelButtonTitle) {
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction *action){
+                                                                 if (tapBlock) {
+                                                                     tapBlock(controller,0);
+                                                                 }
+                                                             }];
+        [controller addAction:cancelAction];
+    }
+    
+    if (destructiveButtonTitle) {
+        UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:destructiveButtonTitle
+                                                                    style:UIAlertActionStyleDestructive
+                                                                  handler:^(UIAlertAction *action){
+                                                                      if (tapBlock) {
+                                                                          tapBlock(controller, 1);
+                                                                      }
+                                                                  }];
+        [controller addAction:destructiveAction];
+    }
+    
+    for (NSUInteger i = 0; i < otherButtonTitles.count; i++) {
+        NSString *otherButtonTitle = otherButtonTitles[i];
+        
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction *action){
+                                                                if (tapBlock) {
+                                                                    tapBlock(controller, destructiveButtonTitle?2:1 + i);
+                                                                }
+                                                            }];
+        [controller addAction:otherAction];
+    }
+    
+    for (NSUInteger i = 0; i < textTitles.count; i++){
+        [controller addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = [textTitles objectAtIndex:i];
+        }];
+    }
+    
+    [viewController presentViewController:controller animated:YES completion:nil];
+}
 + (void)showActionSheetInViewController:(nonnull UIViewController *)viewController
                               withTitle:(nullable NSString *)title
                                 message:(nullable NSString *)message
